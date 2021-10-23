@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD010 -->
 
-# firelordrn(BETA, NOT for nodejs)
+# firelordrn(BETA, react native only)
 
 [![npm](https://img.shields.io/npm/v/firelordrn)](https://www.npmjs.com/package/firelordrn) [![GitHub](https://img.shields.io/github/license/tylim88/firelordrn)](https://github.com/tylim88/firelordrn/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/tylim88/firelordrn/pulls)
 
