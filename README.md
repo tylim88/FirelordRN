@@ -16,6 +16,11 @@
 
 ⛲️ Out of box typescript support.
 
+Variants:
+
+1. [nodejs](https://www.npmjs.com/package/firelord)
+2. [js](https://www.npmjs.com/package/firelordjs)
+
 ## 🦙 Usage
 
 This is wrapper for [react-native-firebase](https://www.npmjs.com/package/react-native-firebase)
