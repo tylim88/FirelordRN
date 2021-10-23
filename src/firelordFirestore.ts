@@ -1,5 +1,5 @@
 export namespace FirelordFirestore {
-	export type firestore =
+	export type Firestore =
 		import('@react-native-firebase/app').ReactNativeFirebase.FirebaseModuleWithStaticsAndApp<
 			import('@react-native-firebase/firestore').FirebaseFirestoreTypes.Module,
 			import('@react-native-firebase/firestore').FirebaseFirestoreTypes.Statics

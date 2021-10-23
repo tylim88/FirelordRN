@@ -30,11 +30,21 @@ finally you just need to change the import
 instead of
 
 ```ts
-import { firelord, Firelord } from 'firelord' // don't do this
+// don't do this
+import { firelord, Firelord } from 'firelord'
+import { firestore } from 'firebase-admin'
+
+// create wrapper
+const wrapper = firelord(firestore)
 ```
 
 do
 
 ```ts
-import { firelord, Firelord } from 'firelordrn' // do this
+// do this
+import { firelord, Firelord } from 'firelordrn'
+import firestore from '@react-native-firebase/firestore'
+
+// create wrapper
+const wrapper = firelord(firestore)
 ```
