@@ -12,6 +12,8 @@
 
 ✨ Api closely resemble firestore api, low learning curve.
 
+🐉 Zero dependency.
+
 ⛲️ Out of box typescript support.
 
 ## 🦙 Usage
