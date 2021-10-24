@@ -36,6 +36,12 @@ export namespace FirelordFirestore {
 	export type WhereFilterOp =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.WhereFilterOp
 
+	export type GetOptions =
+		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.GetOptions
+
+	export type SnapshotListenOptions =
+		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.SnapshotListenOptions
+
 	export type CreatedUpdatedWrite = {
 		createdAt: FieldValue
 		updatedAt: FieldValue
