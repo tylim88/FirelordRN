@@ -342,3 +342,9 @@ export const firelord =
 
 		return { col, colGroup }
 	}
+
+export const ozai = firelord
+
+export { flatten } from './flat'
+
+export type { Firelord } from './firelord'
