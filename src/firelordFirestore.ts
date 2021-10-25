@@ -42,6 +42,8 @@ export namespace FirelordFirestore {
 	export type SnapshotListenOptions =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.SnapshotListenOptions
 
+	export type GeoPoint = Firestore['GeoPoint']
+
 	export type CreatedUpdatedWrite = {
 		createdAt: FieldValue
 		updatedAt: FieldValue
