@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD010 -->
 
-# firelordrn(BETA, react native only)
+<!-- # firelordrn(BETA, react native only)
 
 [![npm](https://img.shields.io/npm/v/firelordrn)](https://www.npmjs.com/package/firelordrn) [![GitHub](https://img.shields.io/github/license/tylim88/firelordrn)](https://github.com/tylim88/firelordrn/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/tylim88/firelordrn/pulls)
 
@@ -74,4 +74,6 @@ user.onSnapshot(observer, options)
 
 no surprise here, everything is similar to firestore api
 
-the rest is exactly the same as [firelord](https://github.com/tylim88/Firelord)
+the rest is exactly the same as [firelord](https://github.com/tylim88/Firelord) -->
+
+there is a typing bug in this package, can be fixed and will fix it tomorrow!
