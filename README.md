@@ -4,11 +4,15 @@
 
 [![npm](https://img.shields.io/npm/v/firelordrn)](https://www.npmjs.com/package/firelordrn) [![GitHub](https://img.shields.io/github/license/tylim88/firelordrn)](https://github.com/tylim88/firelordrn/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/tylim88/firelordrn/pulls)
 
-🐤 firestore react native wrapper with deeper typing solution.
+🐤 Write truly scalable firestore code with complete deep typing firestore wrapper, no more typing hell in your firestore code.
 
-🚀 All read and write operation are typed, field path, field value, collection path, document path, everything is typed!
+💪🏻 handle object, array, array object, object array...and all kinds of type, regardless of the nesting level!
 
-🔥 Automatically convert base type to corresponding read and write time(good at handling timestamp and field value).
+🚀 All read and write operation are typed, query field path, field value, collection path, document path, everything is typed!
+
+🔥 Automatically convert all value type to corresponding read type, write type and compare type(good at handling timestamp and field value).
+
+✋🏻 Not only it safeguards your types, but it also stops you from making any incorrect implementation(use the wrapper incorrectly).
 
 ✨ Api closely resemble firestore api, low learning curve.
 

@@ -1,7 +1,7 @@
 {
 	"name": "firelordrn",
-	"version": "0.4.0",
-	"description": "🔥 react native firestore wrapper with deeper typing solution, handle nested object, nested array, array object, object array..etc types!",
+	"version": "0.5.0",
+	"description": "🔥 Write truly scalable firestore code with complete deep typing firestore wrapper, no more typing hell in your firestore code.",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {

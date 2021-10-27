@@ -7,6 +7,8 @@ import { flatten } from './flat'
 // create wrapper
 const wrapper = firelord(firestore)
 
+const { increment, arrayUnion, serverTimestamp } = wrapper().fieldValue
+
 // use base type to generate read and write type
 type User = Firelord.ReadWriteCreator<
 	{
@@ -77,8 +79,6 @@ user.onSnapshot({
 	},
 })
 
-const serverTimestamp = firestore.FieldValue.serverTimestamp()
-
 // create if not exist, else overwrite
 // although it can overwrite, this is intended to use as create
 // require all members in `write type` except `updatedAt` and `createdAt`
@@ -87,7 +87,7 @@ user.set({
 	name: 'John',
 	age: 24,
 	birthday: new Date(1995, 11, 17),
-	joinDate: serverTimestamp,
+	joinDate: serverTimestamp(),
 	beenTo: ['RUSSIA'],
 })
 
@@ -132,7 +132,7 @@ user.runTransaction(async transaction => {
 		name: 'John',
 		age: 24,
 		birthday: new Date(1995, 11, 17),
-		joinDate: serverTimestamp,
+		joinDate: serverTimestamp(),
 		beenTo: ['RUSSIA'],
 	})
 
@@ -372,43 +372,16 @@ nested.doc('123456').update(data)
 nested.doc('123456').set(flatten(data, {}))
 nested.doc('123456').update(flatten(data, {}))
 
-type HasPrimitiveObject = Firelord.ReadWriteCreator<
-	{
-		a: Date
-		b: { c: string }
-		d: { e: Date }
-	},
-	'Primitive',
-	string
->
+const handleFieldValue = wrapper<HandleFieldValue>().col('HandleFieldValue')
 
-const primitive = wrapper<HasPrimitiveObject>().col('Primitive')
+handleFieldValue.doc('1234567').set({
+	a: increment(1),
+	b: serverTimestamp(),
+	d: arrayUnion('123', '456'),
+})
 
-const data1 = { a: new Date(0), b: { c: '123' }, d: { e: new Date(0) } }
-
-const flattenData = flatten(
-	data1,
-	{ a: 'a', e: 'e' } // create a mirror object (name same as value) for any property that the value is `primitive object`, in this case, it is `a` and `e`
-)
-
-primitive.doc('12345').set(flattenData)
-
-type DuplicatePropsName = Firelord.ReadWriteCreator<
-	{
-		a: Date
-		b: { a: string }
-	},
-	'Duplicate',
-	string
->
-type read = DuplicatePropsName['read'] // never
-type write = DuplicatePropsName['write'] // never
-type compare = DuplicatePropsName['compare'] // never
-
-const duplicate = wrapper<DuplicatePropsName>().col('Duplicate')
-
-const data2 = { a: new Date(0), b: { c: '123' }, d: { e: new Date(0) } }
-
-const flattenData2 = flatten(data2)
-
-duplicate.doc('12345').set(flattenData2)
+handleFieldValue.doc('1234567').set({
+	a: increment(''),
+	b: arrayUnion('123', '456'),
+	d: arrayUnion(123, 456),
+})
