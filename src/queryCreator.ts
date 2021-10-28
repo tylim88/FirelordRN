@@ -221,7 +221,7 @@ export const queryCreator = <
 				PermanentlyOmittedKeys
 			>(ref)
 
-			const { orderBy: orderBy1, ...rest } = orderBy
+			const finalRef = orderBy
 				? orderByCreator(ref)(
 						orderBy.fieldPath,
 						orderBy.directionStr,
@@ -229,15 +229,9 @@ export const queryCreator = <
 				  )
 				: queryRef
 
-			return (orderBy ? rest : queryRef) as J extends
-				| '<'
-				| '<='
-				| '>'
-				| '>'
-				| '=='
-				| 'in'
-				? typeof rest
-				: typeof queryRef
+			return finalRef as J extends '<' | '<=' | '>' | '>' | '==' | 'in'
+				? OmitKeys<typeof finalRef, 'orderBy'>
+				: typeof finalRef
 		},
 		limit: (limit: number) => {
 			return queryCreator<
