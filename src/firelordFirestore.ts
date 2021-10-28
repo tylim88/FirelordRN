@@ -4,7 +4,8 @@ export namespace FirelordFirestore {
 			import('@react-native-firebase/firestore').FirebaseFirestoreTypes.Module,
 			import('@react-native-firebase/firestore').FirebaseFirestoreTypes.Statics
 		>
-
+	export type FirebaseFirestore =
+		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.Module
 	export type FieldValue =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.FieldValue
 

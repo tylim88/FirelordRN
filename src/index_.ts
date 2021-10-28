@@ -15,6 +15,8 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 		read: FirelordFirestore.DocumentData & FirelordFirestore.CreatedUpdatedRead
 		write: FirelordFirestore.DocumentData &
 			FirelordFirestore.CreatedUpdatedWrite
+		writeNested: FirelordFirestore.DocumentData &
+			FirelordFirestore.CreatedUpdatedWrite
 		compare: FirelordFirestore.DocumentData &
 			FirelordFirestore.CreatedUpdatedCompare
 		base: FirelordFirestore.DocumentData
@@ -25,6 +27,7 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 		path: string
 		id: string
 		doc: (documentPath: T['docPath']) => {
+			firestore: FirelordFirestore.FirebaseFirestore
 			id: string
 			parent: FirelordFirestore.CollectionReference<T['read']>
 			path: string
@@ -43,7 +46,9 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 				options?: FirelordFirestore.SnapshotListenOptions | undefined
 			) => () => void
 			set: <
-				J_1 extends Partial<OmitKeys<T['write'], 'createdAt' | 'updatedAt'>>,
+				J_1 extends Partial<
+					OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+				>,
 				Z extends {
 					merge?: true | undefined
 					mergeField?:
@@ -54,10 +59,10 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 				data: J_1 extends never
 					? J_1
 					: Z extends undefined
-					? OmitKeys<T['write'], 'createdAt' | 'updatedAt'>
+					? OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
 					: Z['merge'] extends true
 					? PartialNoImplicitUndefinedAndNoExtraMember<
-							OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+							OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
 							J_1
 					  >
 					: Z['mergeField'] extends Exclude<
@@ -65,10 +70,10 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 							'createdAt' | 'updatedAt'
 					  >[]
 					? PartialNoImplicitUndefinedAndNoExtraMember<
-							OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+							OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
 							J_1
 					  >
-					: OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+					: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
 				options?: Z | undefined
 			) => Promise<void>
 			update: <
@@ -103,7 +108,7 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 				callback: (transaction: {
 					set: <
 						J_4 extends Partial<
-							OmitKeys<T['write'], 'createdAt' | 'updatedAt'>
+							OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
 						>,
 						Z_1 extends {
 							merge?: true | undefined
@@ -115,11 +120,21 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 						data: J_4 extends never
 							? J_4
 							: Z_1 extends undefined
-							? OmitKeys<T['write'], 'createdAt' | 'updatedAt'>
-							: PartialNoImplicitUndefinedAndNoExtraMember<
-									OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+							? OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+							: Z_1['merge'] extends true
+							? PartialNoImplicitUndefinedAndNoExtraMember<
+									OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
 									J_4
-							  >,
+							  >
+							: Z_1['mergeField'] extends Exclude<
+									keyof T['write'],
+									'createdAt' | 'updatedAt'
+							  >[]
+							? PartialNoImplicitUndefinedAndNoExtraMember<
+									OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+									J_4
+							  >
+							: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
 						options?: Z_1 | undefined
 					) => FirelordFirestore.Transaction
 					update: <
@@ -138,10 +153,10 @@ export type firelord = (firestore: FirelordFirestore.Firestore) => <
 			) => void
 		}
 		add: (
-			data: OmitKeys<T['write'], 'createdAt' | 'updatedAt'>
+			data: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
 		) => Promise<
 			FirelordFirestore.DocumentReference<
-				OmitKeys<T['write'], 'createdAt' | 'updatedAt'>
+				OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
 			>
 		>
 	} & ReturnType<
