@@ -202,6 +202,37 @@ export const firelord: fl =
 									...(data as Partial<Write>), // !
 								})
 							},
+							set: <
+								J extends Partial<WriteNested>,
+								Z extends { merge?: true; mergeField?: (keyof Write)[] }
+							>(
+								data: J extends never
+									? J
+									: Z extends undefined
+									? WriteNested
+									: Z['merge'] extends true
+									? PartialNoImplicitUndefinedAndNoExtraMember<WriteNested, J>
+									: Z['mergeField'] extends (keyof Write)[]
+									? PartialNoImplicitUndefinedAndNoExtraMember<WriteNested, J>
+									: WriteNested,
+								options?: Z
+							) => {
+								if (options) {
+									return batch.set(
+										docWrite,
+										{
+											updatedAt: time,
+											...data,
+										},
+										options
+									)
+								} else {
+									return batch.set(docWrite, {
+										...newTime,
+										...data,
+									})
+								}
+							},
 						}
 					},
 					runTransaction: (
