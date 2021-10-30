@@ -1,0 +1,13 @@
+{
+	"name": "Firelord",
+
+	"platforms": ["Android", "IOS"],
+
+	"content": "README.md",
+
+	"pages": [],
+
+	"related": ["tylim88/Firelord", "tylim88/Firelordjs"],
+
+	"tabs": []
+}
