@@ -257,7 +257,7 @@ export const queryCreator = <
 	}
 }
 
-type QuerySnapshotCreator<
+export type QuerySnapshotCreator<
 	T extends {
 		colPath: string
 		docID: string
@@ -288,7 +288,7 @@ type QuerySnapshotCreator<
 	size: number
 }
 
-const querySnapshotCreator = <
+export const querySnapshotCreator = <
 	T extends {
 		colPath: string
 		docID: string
