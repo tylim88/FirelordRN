@@ -79,7 +79,7 @@ export const docCreator =
 		type WriteNested = Firelord.InternalReadWriteConverter<T>['writeNested']
 		type Read = Firelord.InternalReadWriteConverter<T>['read']
 
-		const { createdAt, updatedAt } = createTime(firestore)
+		const { updatedAt } = createTime(firestore)
 
 		// undefined type is here but we already make sure that it is impossible for undefined to reach here
 		// if docRef is undefined, colRef will not be undefined and vice versa
@@ -143,20 +143,7 @@ export const docCreator =
 					: WriteNested,
 				options?: Z
 			) => {
-				if (options) {
-					return docWrite.set(
-						{
-							...updatedAt,
-							...data,
-						},
-						options
-					)
-				} else {
-					return docWrite.set({
-						...createdAt,
-						...data,
-					})
-				}
+				return docWrite.set(data, options || {})
 			},
 			update: <J extends Partial<Write>>(
 				data: J extends never
@@ -207,21 +194,7 @@ export const docCreator =
 							: WriteNested,
 						options?: Z
 					) => {
-						if (options) {
-							return batch.set(
-								docWrite,
-								{
-									...updatedAt,
-									...data,
-								},
-								options
-							)
-						} else {
-							return batch.set(docWrite, {
-								...createdAt,
-								...data,
-							})
-						}
+						return batch.set(docWrite, data, options || {})
 					},
 				}
 			},
@@ -242,21 +215,7 @@ export const docCreator =
 							: WriteNested,
 						options?: Z
 					) => {
-						if (options) {
-							return transaction.set(
-								docWrite,
-								{
-									...updatedAt,
-									...data,
-								},
-								options
-							)
-						} else {
-							return transaction.set(docWrite, {
-								...createdAt,
-								...data,
-							})
-						}
+						return transaction.set(docWrite, data, options || {})
 					},
 					update: <J extends Partial<Write>>(
 						data: J extends never
@@ -314,7 +273,7 @@ export type DocCreator<
 		options?: FirelordFirestore.SnapshotListenOptions
 	) => () => void
 	set: <
-		J_1 extends Partial<OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>>,
+		J_1 extends Partial<Firelord.InternalReadWriteConverter<T>['writeNested']>,
 		Z extends {
 			merge?: true | undefined
 			mergeField?:
@@ -325,10 +284,10 @@ export type DocCreator<
 		data: J_1 extends never
 			? J_1
 			: Z extends undefined
-			? OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+			? Firelord.InternalReadWriteConverter<T>['writeNested']
 			: Z['merge'] extends true
 			? PartialNoImplicitUndefinedAndNoExtraMember<
-					OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+					Firelord.InternalReadWriteConverter<T>['writeNested'],
 					J_1
 			  >
 			: Z['mergeField'] extends Exclude<
@@ -336,10 +295,10 @@ export type DocCreator<
 					'createdAt' | 'updatedAt'
 			  >[]
 			? PartialNoImplicitUndefinedAndNoExtraMember<
-					OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+					Firelord.InternalReadWriteConverter<T>['writeNested'],
 					J_1
 			  >
-			: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+			: Firelord.InternalReadWriteConverter<T>['writeNested'],
 		options?: Z | undefined
 	) => Promise<void>
 	update: <
@@ -371,7 +330,7 @@ export type DocCreator<
 		) => FirelordFirestore.WriteBatch
 		set: <
 			J_7 extends Partial<
-				OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+				Firelord.InternalReadWriteConverter<T>['writeNested']
 			>,
 			Z_2 extends {
 				merge?: true | undefined
@@ -383,10 +342,10 @@ export type DocCreator<
 			data: J_7 extends never
 				? J_7
 				: Z_2 extends undefined
-				? OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+				? Firelord.InternalReadWriteConverter<T>['writeNested']
 				: Z_2['merge'] extends true
 				? PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['writeNested'],
 						J_7
 				  >
 				: Z_2['mergeField'] extends Exclude<
@@ -394,17 +353,17 @@ export type DocCreator<
 						'createdAt' | 'updatedAt'
 				  >[]
 				? PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['writeNested'],
 						J_7
 				  >
-				: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+				: Firelord.InternalReadWriteConverter<T>['writeNested'],
 			options?: Z_2 | undefined
 		) => FirelordFirestore.WriteBatch
 	}
 	transaction: (transaction: FirelordFirestore.Transaction) => {
 		set: <
 			J_4 extends Partial<
-				OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+				Firelord.InternalReadWriteConverter<T>['writeNested']
 			>,
 			Z_1 extends {
 				merge?: true | undefined
@@ -416,10 +375,10 @@ export type DocCreator<
 			data: J_4 extends never
 				? J_4
 				: Z_1 extends undefined
-				? OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>
+				? Firelord.InternalReadWriteConverter<T>['writeNested']
 				: Z_1['merge'] extends true
 				? PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['writeNested'],
 						J_4
 				  >
 				: Z_1['mergeField'] extends Exclude<
@@ -427,10 +386,10 @@ export type DocCreator<
 						'createdAt' | 'updatedAt'
 				  >[]
 				? PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['writeNested'],
 						J_4
 				  >
-				: OmitKeys<T['writeNested'], 'createdAt' | 'updatedAt'>,
+				: Firelord.InternalReadWriteConverter<T>['writeNested'],
 			options?: Z_1 | undefined
 		) => FirelordFirestore.Transaction
 		update: <
