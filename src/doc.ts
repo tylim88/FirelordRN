@@ -16,7 +16,7 @@ export const docSnapshotCreator = <
 		? undefined
 		: never,
 	documentSnapshot: FirelordFirestore.DocumentSnapshot
-): ReturnType<DocSnapshotCreator<T>> => {
+): ReturnType<DocSnapshotCreator<T, M>> => {
 	type Read = Firelord.InternalReadWriteConverter<T>['read']
 
 	return {
@@ -55,7 +55,7 @@ export type DocSnapshotCreator<
 ) => {
 	exists: boolean
 	id: string
-	ref: ReturnType<ReturnType<DocCreator<T>>>
+	ref: ReturnType<ReturnType<DocCreator<T, M>>>
 	data: () => T['read'] | undefined
 	get: <F extends string & keyof T['write']>(fieldPath: F) => T['read'][F]
 	isEqual: (other: FirelordFirestore.DocumentSnapshot) => boolean
@@ -73,7 +73,7 @@ export const docCreator =
 			| FirelordFirestore.DocumentReference
 			| (M extends 'col' ? undefined : M extends 'colGroup' ? never : never)
 	) =>
-	(documentID?: T['docID']): ReturnType<ReturnType<DocCreator<T>>> => {
+	(documentID?: T['docID']): ReturnType<ReturnType<DocCreator<T, M>>> => {
 		type Write = Firelord.InternalReadWriteConverter<T>['write']
 		type WriteNested = Firelord.InternalReadWriteConverter<T>['writeNested']
 		type Read = Firelord.InternalReadWriteConverter<T>['read']
@@ -105,7 +105,7 @@ export const docCreator =
 			},
 			onSnapshot: (
 				observer: {
-					next?: (snapshot: ReturnType<DocSnapshotCreator<T>>) => void
+					next?: (snapshot: ReturnType<DocSnapshotCreator<T, M>>) => void
 					error?: (error: Error) => void
 				},
 				options?: FirelordFirestore.SnapshotListenOptions
@@ -266,7 +266,7 @@ export type DocCreator<
 	) => boolean
 	onSnapshot: (
 		observer: {
-			next?: (snapshot: ReturnType<DocSnapshotCreator<T>>) => void
+			next?: (snapshot: ReturnType<DocSnapshotCreator<T, M>>) => void
 			error?: (error: Error) => void
 		},
 		options?: FirelordFirestore.SnapshotListenOptions
@@ -312,7 +312,7 @@ export type DocCreator<
 	) => Promise<void>
 	get: (
 		options?: FirelordFirestore.GetOptions
-	) => Promise<ReturnType<DocSnapshotCreator<T>>>
+	) => Promise<ReturnType<DocSnapshotCreator<T, M>>>
 	delete: () => Promise<void>
 	batch: (batch: FirelordFirestore.WriteBatch) => {
 		commit: () => Promise<void>
@@ -402,6 +402,6 @@ export type DocCreator<
 				  >
 		) => FirelordFirestore.Transaction
 		delete: () => FirelordFirestore.Transaction
-		get: () => Promise<ReturnType<DocSnapshotCreator<T>>>
+		get: () => Promise<ReturnType<DocSnapshotCreator<T, M>>>
 	}
 }
