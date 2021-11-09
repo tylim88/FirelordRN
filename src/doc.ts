@@ -1,5 +1,4 @@
 import {
-	OmitKeys,
 	PartialNoImplicitUndefinedAndNoExtraMember,
 	Firelord,
 } from './firelord'
@@ -302,12 +301,12 @@ export type DocCreator<
 		options?: Z | undefined
 	) => Promise<void>
 	update: <
-		J_2 extends Partial<OmitKeys<T['write'], 'createdAt' | 'updatedAt'>>
+		J_2 extends Partial<Firelord.InternalReadWriteConverter<T>['write']>
 	>(
 		data: J_2 extends never
 			? J_2
 			: PartialNoImplicitUndefinedAndNoExtraMember<
-					OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+					Firelord.InternalReadWriteConverter<T>['write'],
 					J_2
 			  >
 	) => Promise<void>
@@ -319,12 +318,12 @@ export type DocCreator<
 		commit: () => Promise<void>
 		delete: () => FirelordFirestore.WriteBatch
 		update: <
-			J_3 extends Partial<OmitKeys<T['write'], 'createdAt' | 'updatedAt'>>
+			J_3 extends Partial<Firelord.InternalReadWriteConverter<T>['write']>
 		>(
 			data: J_3 extends never
 				? J_3
 				: PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['write'],
 						J_3
 				  >
 		) => FirelordFirestore.WriteBatch
@@ -393,12 +392,12 @@ export type DocCreator<
 			options?: Z_1 | undefined
 		) => FirelordFirestore.Transaction
 		update: <
-			J_5 extends Partial<OmitKeys<T['write'], 'createdAt' | 'updatedAt'>>
+			J_5 extends Partial<Firelord.InternalReadWriteConverter<T>['write']>
 		>(
 			data: J_5 extends never
 				? J_5
 				: PartialNoImplicitUndefinedAndNoExtraMember<
-						OmitKeys<T['write'], 'createdAt' | 'updatedAt'>,
+						Firelord.InternalReadWriteConverter<T>['write'],
 						J_5
 				  >
 		) => FirelordFirestore.Transaction
