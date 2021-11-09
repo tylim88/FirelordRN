@@ -12,14 +12,17 @@ export namespace FirelordFirestore {
 	export type DocumentData =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentData
 
-	export type DocumentChange<T = DocumentData> =
-		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentChange<T>
-
 	export type DocumentReference<T extends DocumentData = DocumentData> =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentReference<T>
 
 	export type DocumentSnapshot<T extends DocumentData = DocumentData> =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentSnapshot<T>
+
+	export type DocumentChange<T = DocumentData> =
+		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentChange<T>
+
+	export type DocumentChangeType =
+		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.DocumentChangeType
 
 	export type CollectionReference<T extends DocumentData = DocumentData> =
 		import('@react-native-firebase/firestore').FirebaseFirestoreTypes.CollectionReference<T>
