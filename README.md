@@ -68,7 +68,10 @@ import { firelord, Firelord } from 'firelord'
 import { firestore } from 'firebase-admin'
 
 // create wrapper
-const wrapper = firelord(firestore)
+const {
+	fieldValue: { increment, arrayUnion, arrayRemove, serverTimestamp },
+	wrapper,
+} = firelord(firestore)
 ```
 
 do
@@ -79,7 +82,10 @@ import { firelord, Firelord } from 'firelordrn'
 import firestore from '@react-native-firebase/firestore'
 
 // create wrapper
-const wrapper = firelord(firestore)
+const {
+	fieldValue: { increment, arrayUnion, arrayRemove, serverTimestamp },
+	wrapper,
+} = firelord(firestore)
 ```
 
 get and onSnapshot
