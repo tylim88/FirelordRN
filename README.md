@@ -64,7 +64,7 @@ instead of
 ```ts
 // from firelord doc
 // don't do this
-import { firelord, Firelord } from 'firelord'
+import { firelord } from 'firelord'
 import { firestore } from 'firebase-admin'
 
 // create wrapper
@@ -78,7 +78,7 @@ do
 
 ```ts
 // do this
-import { firelord, Firelord } from 'firelordrn'
+import { firelord } from 'firelordrn'
 import firestore from '@react-native-firebase/firestore'
 
 // create wrapper

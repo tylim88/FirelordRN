@@ -56,19 +56,19 @@ export type PartialNoImplicitUndefinedAndNoExtraMember<
 				? T[K] extends Partial<L[K]>
 					? PartialNoImplicitUndefinedAndNoExtraMember<L[K], T[K]>
 					: never
-				: L[K] extends (infer A)[] | Firelord.ArrayMasked
+				: L[K] extends (infer A)[] | FirelordUtils.ArrayMasked
 				? T[K] extends (infer B)[]
 					? B extends A
 						? PartialNoImplicitUndefinedAndNoExtraMemberForArray<A, B>[]
 						: never[]
-					: T[K] extends Firelord.ArrayMasked<A>
+					: T[K] extends FirelordUtils.ArrayMasked<A>
 					? DistributeNoUndefined<L[K], T[K]>
 					: never
 				: DistributeNoUndefined<L[K], T[K]>
 	  }
 	: never
 
-export namespace Firelord {
+export namespace FirelordUtils {
 	export type ServerTimestamp =
 		'This type represents Firestore ServerTimestamp type'
 	export type ServerTimestampMasked = {
@@ -239,17 +239,19 @@ export namespace Firelord {
 		colName: string
 		docID: string
 		docPath: string
-		read: FirelordFirestore.DocumentData & Firelord.CreatedUpdatedRead
-		write: FirelordFirestore.DocumentData & Firelord.CreatedUpdatedWrite
-		writeNested: FirelordFirestore.DocumentData & Firelord.CreatedUpdatedWrite
-		compare: FirelordFirestore.DocumentData & Firelord.CreatedUpdatedCompare
+		read: FirelordFirestore.DocumentData & FirelordUtils.CreatedUpdatedRead
+		write: FirelordFirestore.DocumentData & FirelordUtils.CreatedUpdatedWrite
+		writeNested: FirelordFirestore.DocumentData &
+			FirelordUtils.CreatedUpdatedWrite
+		compare: FirelordFirestore.DocumentData &
+			FirelordUtils.CreatedUpdatedCompare
 		base: FirelordFirestore.DocumentData
 	}
 
 	export type InternalReadWriteConverter<T extends MetaType = never> = {
 		write: OmitKeys<T['write'], 'updatedAt' | 'createdAt'>
 		writeNested: OmitKeys<T['writeNested'], 'updatedAt' | 'createdAt'> &
-			Partial<Firelord.CreatedUpdatedRead>
+			Partial<FirelordUtils.CreatedUpdatedRead>
 		writeNestedCreate: OmitKeys<T['writeNested'], 'updatedAt' | 'createdAt'>
 		read: T['read']
 		compare: T['compare']
