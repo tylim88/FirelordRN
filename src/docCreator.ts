@@ -103,15 +103,17 @@ export const docCreator: <
 			) => {
 				return docWrite.set(data, options || {})
 			},
-			update: <J extends Partial<Write>>(
+			update: async <J extends Partial<Write>>(
 				data: J extends never
 					? J
 					: PartialNoImplicitUndefinedAndNoExtraMember<Write, J>
 			) => {
-				return docWrite.update({
-					...updatedAt,
-					...data,
-				} as T['write']) // !
+				return Object.keys(data).length === 0
+					? docWrite.update({
+							...updatedAt,
+							...data,
+					  } as T['write'])
+					: undefined
 			},
 			get: (options?: FirelordFirestore.GetOptions) => {
 				return docRead.get(options).then(documentSnapshot => {
@@ -132,10 +134,16 @@ export const docCreator: <
 							? J
 							: PartialNoImplicitUndefinedAndNoExtraMember<Write, J>
 					) => {
-						return batch.update(docWrite, {
-							...updatedAt,
-							...data,
-						} as T['write']) // !
+						return (
+							Object.keys(data).length === 0
+								? batch.update(docWrite, {
+										...updatedAt,
+										...data,
+								  } as T['write'])
+								: undefined
+						) as J extends Record<string, never>
+							? undefined
+							: FirelordFirestore.WriteBatch
 					},
 					set: <
 						J extends Partial<WriteNested>,
@@ -180,10 +188,16 @@ export const docCreator: <
 							? J
 							: PartialNoImplicitUndefinedAndNoExtraMember<Write, J>
 					) => {
-						return transaction.update(docWrite, {
-							...updatedAt,
-							...data,
-						} as T['write']) // !
+						return (
+							Object.keys(data).length === 0
+								? transaction.update(docWrite, {
+										...updatedAt,
+										...data,
+								  } as T['write'])
+								: undefined
+						) as J extends Record<string, never>
+							? undefined
+							: FirelordFirestore.Transaction
 					},
 					delete: () => {
 						return transaction.delete(docWrite)
@@ -277,7 +291,9 @@ export type DocCreator<
 						FirelordUtils.InternalReadWriteConverter<T>['write'],
 						J_3
 				  >
-		) => FirelordFirestore.WriteBatch
+		) => J_3 extends Record<string, never>
+			? undefined
+			: FirelordFirestore.WriteBatch
 		set: <
 			J_7 extends Partial<
 				FirelordUtils.InternalReadWriteConverter<T>['writeNested']
@@ -351,7 +367,9 @@ export type DocCreator<
 						FirelordUtils.InternalReadWriteConverter<T>['write'],
 						J_5
 				  >
-		) => FirelordFirestore.Transaction
+		) => J_5 extends Record<string, never>
+			? undefined
+			: FirelordFirestore.Transaction
 		delete: () => FirelordFirestore.Transaction
 		get: () => Promise<DocSnapshotCreator<T, M>>
 	}
