@@ -48,8 +48,8 @@
 
 Variants:
 
-1. [nodejs](https://www.npmjs.com/package/firelord)
-2. [js](https://www.npmjs.com/package/firelordjs)
+1. [NodeJS](https://www.npmjs.com/package/firelord)
+2. [JS](https://www.npmjs.com/package/firelordjs)
 
 ## 🦙 Usage
 
