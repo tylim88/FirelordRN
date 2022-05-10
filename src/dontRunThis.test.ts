@@ -129,7 +129,7 @@ user.set(
 // update if exist, else fail
 // all member are partial members, you can leave any of the member out, however typescript will stop you from explicitly assign `undefined` value to any of the member unless you union it in `base type`
 // auto update `updatedAt`
-user.update({ name: 'Michael' })
+user.update({ name: 'Michael', beenTo: ['RUSSIA' as const] })
 
 // delete document
 user.delete()

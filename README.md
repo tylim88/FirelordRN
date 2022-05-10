@@ -14,6 +14,8 @@
  <a href="https://github.com/tylim88/firelordrn/pulls" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
 
+<h1>I will rewrite this from scratch, no promise, need motivation</h1>
+
 🐤 Write truly type safe and scalable Firestore code with complete deep typing Firestore wrapper.
 
 💪🏻 Type object, array, any combination of array and object, regardless of the nesting level.
