@@ -1,118 +1,145 @@
 <!-- markdownlint-disable MD010 -->
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
 
-# firelordrn(BETA, React Native)
+<div align="center">
+		<img src="https://raw.githubusercontent.com/tylim88/Firelord/main/img/ozai.png" width="200px"/>
+		<h1>FirelordRN 烈火君RN</h1>
+</div>
 
-<p align="center">
- <a href="https://github.com/tylim88/Firelord/blob/main/img/ozai.png" rel="nofollow"><img src="https://raw.githubusercontent.com/tylim88/Firelord/main/img/ozai.png" width="200px" align="center" /></a>
-  <h1 align="center">Firelord 烈焰君(BETA, React Native)</h1>
-</p>
+<div align="center">
+		<a href="https://www.npmjs.com/package/firelordrn" target="_blank">
+				<img
+					src="https://img.shields.io/npm/v/firelordrn"
+					alt="Created by tylim88"
+				/>
+			</a>
+			&nbsp;
+			<a
+				href="https://github.com/tylim88/firelordrn/blob/main/LICENSE"
+				target="_blank"
+			>
+				<img
+					src="https://img.shields.io/github/license/tylim88/firelordrn"
+					alt="License"
+				/>
+			</a>
+			&nbsp;
+			<a
+				href="https://www.npmjs.com/package/firelordrn?activeTab=dependencies"
+				target="_blank"
+			>
+				<img
+					src="https://img.shields.io/badge/dynamic/json?url=https://api.npmutil.com/package/firelordrn&label=dependencies&query=$.dependencies.count&color=brightgreen"
+					alt="dependency count"
+				/>
+			</a>
+			&nbsp;
+			<img
+				src="https://img.shields.io/badge/gzipped-6KB-brightgreen"
+				alt="package size"
+			/>
+			&nbsp;
+			<a href="https://github.com/tylim88/Firelordrn/actions" target="_blank">
+				<img
+					src="https://github.com/tylim88/Firelordrn/workflows/Main/badge.svg"
+					alt="github action"
+				/>
+			</a>
+			&nbsp;
+			<a href="https://codecov.io/gh/tylim88/Firelordrn" target="_blank">
+				<img
+					src="https://codecov.io/gh/tylim88/Firelordrn/branch/main/graph/badge.svg"
+					alt="code coverage"
+				/>
+			</a>
+			&nbsp;
+			<a href="https://github.com/tylim88/Firelordrn/issues" target="_blank">
+				<img
+					alt="GitHub issues"
+					src="https://img.shields.io/github/issues-raw/tylim88/firelordrn"
+				></img>
+			</a>
+			&nbsp;
+			<a href="https://snyk.io/test/github/tylim88/FirelordRN" target="_blank">
+				<img
+					src="https://snyk.io/test/github/tylim88/FirelordRN/badge.svg"
+					alt="code coverage"
+				/>
+			</a>
+			&nbsp;
+			<a
+				href="https://lgtm.com/projects/g/tylim88/Firelordrn/alerts/"
+				target="_blank"
+			>
+				<img
+					alt="Total alerts"
+					src="https://img.shields.io/lgtm/alerts/g/tylim88/Firelordrn.svg?logo=lgtm&logoWidth=18"
+				/>
+			</a>
+			&nbsp;
+			<a
+				href="https://lgtm.com/projects/g/tylim88/Firelordrn/context:javascript"
+				target="_blank"
+			>
+				<img
+					alt="Language grade: JavaScript"
+					src="https://img.shields.io/lgtm/grade/javascript/g/tylim88/Firelordrn.svg?logo=lgtm&logoWidth=18"
+				/>
+			</a>
+</div>
+<br/>
+<div align="center">
+		<i>Extremely High Precision Typescript Wrapper for Firestore React Native, Providing Unparalleled Type Safe and Dev Experience</i>
+</div>
+<br/>
+<div align="center">
+		<i>Modular, Minuscule, Intuitive, Unopinionated, Craftsmanship, Ultimate, Peaceful, Deep</i>
+</div>
+<br/>
+<div align="center">
+	<i>Of The VFQAT &#160;&#160;||&#160;&#160; By The VFQAT &#160;&#160;||&#160;&#160; For The VFQAT</i>
+</div>
+<br />
+<div align="center">
+	<i>End Firestore Typing Madness</i>
+</div>
+<br />
+<div align="center">
+<a href="https://firelordrn.com/quick_start" target="_blank" style="color:blue"><strong>Documentation</strong></a>
+</div>
 
-<p align="center">
- <a href="https://www.npmjs.com/package/firelordrn" rel="nofollow"><img src="https://img.shields.io/npm/v/firelordrn" alt="Created by tylim88"></a>
- <a href="https://github.com/tylim88/firelordrn/blob/main/LICENSE" rel="nofollow"><img src="https://img.shields.io/github/license/tylim88/firelordrn" alt="License"></a>
- <a href="https://github.com/tylim88/firelordrn/pulls" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"></a>
-</p>
+<br/>
 
-<h1>I will rewrite this from scratch, no promise, need motivation</h1>
+## Note
 
-🐤 Write truly type safe and scalable Firestore code with complete deep typing Firestore wrapper.
+v1 NOT YET RELEASED on NPM!!!
 
-💪🏻 Type object, array, any combination of array and object, regardless of the nesting level.
+This library is being updated from v0 to v1, v0 is not compatible with v1.
 
-🚀 The wrapper type all read and write operations, query field path, field value, collection path, document path.
+This change is necessary as v1 corrected a lot of issues in v0.
 
-🥙 All `Snapshot`(response) are recursively typed, no more type casting.
+The v0 documentation can still be found [here](https://github.com/tylim88/Firelordrn/tree/896c572d7ab3063156d8e3b515bb523c3720f4e2).
 
-🔥 Convert all value types to corresponding `read` types, `write` types and `compare` types (good at handling timestamp and field values).
+## Why Do You Need This? What Problems Firelord Solves?
 
-💥 Safe typing with masked Firestore Field Value(serverTimestamp, arrayRemove, arrayUnion and increment) types.
+Read here at [FirelordJS](https://github.com/tylim88/FirelordJS#readme).
 
-🌈 Strictly one-time setup per document. Once configured, you are ready. No more confusing setup in the future, simplicity at its finest.
+## About
 
-🦚 No annoying typescript decorator needed, type in plain simple typescript, only once and you can start your game.
+This wrapper wrap around React Native Firestore V8 interface(There is no V9 for React Native version) and turn it into type safe V9 interface.
 
-🍡 Prevent empty array from hitting `in`, `not-in`, `array-contains-any`, `arrayUnion` and `arrayRemove`, peace in mind.
+The API is basically same as the web version, both web and React Native version basically share the same documentation.
 
-🍧 Use `in`, `not-in` and `array-contains-any` with more than 10 elements array. (`not-in` has a caveat)
+It does not become modular like the web version.
 
-🍁 `write` operations reject unknown member; `update` enforce partial but no undefined and skips operation if data is an empty object.
+The ultimate goal is to unify the knowledge of back end and front end, so we don't need to learn both V9 and V8 and most importantly: absolute type safe.
 
-🍹 Avoid `order` and `query` limitations for you, stopping potential run-time errors before they happen.
+It is not possible to unified platform specific API, good thing is most of these APIs are mutually exclusive.
 
-🎄 Stop your from order the same field twice.
+## Related Projects
 
-✨ API closely resembles Firestore API, low learning curve.
-
-🦊 Zero dependencies.
-
-⛲️ Out of box typescript support.
-
-Variants:
-
-1. [NodeJS](https://www.npmjs.com/package/firelord)
-2. [JS](https://www.npmjs.com/package/firelordjs)
-
-## 🦙 Usage
-
-This is a wrapper for [react-native-firebase](https://www.npmjs.com/package/react-native-firebase)
-
-work exactly like [firelord](https://github.com/tylim88/Firelord)<-- read the doc here
-
-there are few differences:
-
-1. any kind of `create` operations is not available, you can only create a document using `set` or `add`
-2. no `offset`
-3. more parameters for `get` and `onSnapshot`
-
-instead of
-
-```ts
-// from firelord doc
-// don't do this
-import { firelord } from 'firelord'
-import { firestore } from 'firebase-admin'
-
-// create wrapper
-const {
-	fieldValue: { increment, arrayUnion, arrayRemove, serverTimestamp },
-	wrapper,
-} = firelord(firestore)
-```
-
-do
-
-```ts
-// do this
-import { firelord } from 'firelordrn'
-import firestore from '@react-native-firebase/firestore'
-
-// create wrapper
-const {
-	fieldValue: { increment, arrayUnion, arrayRemove, serverTimestamp },
-	wrapper,
-} = firelord(firestore)
-```
-
-get and onSnapshot
-
-```ts
-// import user
-
-// options?:{source: 'default' | 'server' |  'cache'}
-user.get(options)
-user.where('age', '==', 20).get(options)
-
-// observer: {
-// 	next?: (
-// 		snapshot: FirelordFirestore.DocumentSnapshot<Read>
-// 	) => void
-// 	error?: (error: Error) => void
-// },
-// options?: { includeMetadataChanges: false }
-user.onSnapshot(observer, options)
-```
-
-no surprise here, everything is similar to firestore api
-
-the rest is exactly the same as [firelord](https://github.com/tylim88/Firelord)
+1. [FirelordRN](https://github.com/tylim88/FirelordRN) - Typescript wrapper for Firestore Web
+2. [Firelordrn](https://github.com/tylim88/firelordrn) - Typescript wrapper for Firestore React Native
+3. [FireLaw](https://github.com/tylim88/firelaw) - Write Firestore security rule with Typescript, utilizing Firelord type engine.
+4. [FireCall](https://github.com/tylim88/FireCall) - Helper Function to write easier and safer Firebase onCall function.

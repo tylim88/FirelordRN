@@ -1,21 +1,14 @@
-module.exports = function (api) {
-	api.cache(true)
-
-	return {
-		comments: false,
-		presets: ['@babel/preset-env', '@babel/preset-typescript'],
-		plugins: [
-			'@babel/plugin-proposal-export-namespace-from',
-			[
-				'module-resolver',
-				{
-					root: ['src'],
-					extensions: ['.ts', '.tsx'],
-					alias: {
-						'*': '*',
-					},
+module.exports = {
+	presets: [
+		'module:metro-react-native-babel-preset',
+		'@babel/preset-typescript',
+		[
+			'@babel/preset-env',
+			{
+				targets: {
+					node: 'current',
 				},
-			],
+			},
 		],
-	}
+	],
 }
