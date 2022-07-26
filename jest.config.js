@@ -8,7 +8,11 @@ module.exports = {
 		'^.+\\.(js|ts)$': ['babel-jest'],
 	}, // ts-jest causing coverage issue, use babel-jest instead
 	transformIgnorePatterns: [
-		'node_modules/(?!react-native|@react-native-firebase/(.*))',
+		'node_modules/(?!(react-native' +
+			'|@react-native-firebase/firestore' +
+			'|@react-native-firebase/app' +
+			'|@react-native-firebase/' +
+			')/)',
 	],
 	moduleDirectories: ['node_modules', 'src'],
 	collectCoverage: true,
