@@ -19,7 +19,7 @@
 		"test": "firebase emulators:exec --only firestore \"rm -rf coverage && jest --forceExit\"",
 		"parcel": "npm un firebase && npm i firebase && rm -rf dist && tsc --emitDeclarationOnly true && parcel build && npm i -D firebase",
 		"build": "rm -rf dist && tsc",
-		"link": "npm unlink firelordjs && npm link && npm link firelordjs",
+		"link": "npm unlink firelordrn && npm link && npm link firelordrn",
 		"babel": "babel-node -x .ts -- src/fieldPath/documentId.ts",
 		"jest": "jest src/queryClauses/index.test.ts --forceExit",
 		"commit": "git commit --no-verify",
@@ -39,19 +39,19 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tylim88/firelordjs.git"
+		"url": "git+https://github.com/tylim88/firelordrn.git"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/tylim88/firelordjs/issues"
+		"url": "https://github.com/tylim88/firelordrn/issues"
 	},
-	"homepage": "https://firelordjs.com",
+	"homepage": "https://firelordjs.com/firelordrn/quick_start",
 	"keywords": [
 		"firebase",
 		"firestore",
 		"wrapper",
 		"typescript",
-		"web",
+		"React Native",
 		"scalable",
 		"type-safe",
 		"V9"
