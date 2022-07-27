@@ -4,7 +4,7 @@
 
 <div align="center">
 		<img src="https://raw.githubusercontent.com/tylim88/Firelord/main/img/ozai.png" width="200px"/>
-		<h1>FirelordRN 烈火君RN</h1>
+		<h1>FirelordRN 烈火君RN (Beta)</h1>
 </div>
 
 <div align="center">
