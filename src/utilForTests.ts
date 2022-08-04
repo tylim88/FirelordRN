@@ -6,7 +6,7 @@ import {
 	DocumentReference,
 	DeleteField,
 	DocumentSnapshot,
-	OriTimestamp,
+	Timestamp,
 } from './types'
 import pick from 'pick-random'
 import betwin from 'betwin'
@@ -101,7 +101,7 @@ export const compareWriteDataWithDocSnapData = (
 		data.a.b.f = (
 			data.a.b.f as {
 				g: boolean
-				h: Date | OriTimestamp
+				h: Date | Timestamp
 				m: number
 			}[]
 		).map(item => {

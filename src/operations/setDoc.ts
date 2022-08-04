@@ -1,9 +1,4 @@
-import {
-	OriDocumentReference,
-	OriDocumentData,
-	OriSetOptions,
-	Set,
-} from '../types'
+import { OriDocumentReference, DocumentData, SetOptions, Set } from '../types'
 import { removeFieldValueInhomogeneousProps } from '../fieldValue'
 /**
 Writes to the document referred to by this DocumentReference. If the document does not yet exist, it will be created.
@@ -18,8 +13,8 @@ Writes to the document referred to by this DocumentReference. If the document do
 */
 export const setDoc = ((
 	reference: OriDocumentReference,
-	data: OriDocumentData,
-	options?: OriSetOptions
+	data: DocumentData,
+	options?: SetOptions
 ) => {
 	return reference.set(removeFieldValueInhomogeneousProps(data), options || {})
 }) as unknown as Set

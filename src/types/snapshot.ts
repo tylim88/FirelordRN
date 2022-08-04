@@ -3,7 +3,7 @@ import {
 	SnapshotMetadata,
 	SnapshotListenOptions,
 	DocumentChangeType,
-} from './alias'
+} from './ori'
 import {
 	UnionReadServerTimestampWithNullFlatten,
 	UnionReadServerTimestampWithNull,
