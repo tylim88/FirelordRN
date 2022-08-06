@@ -4,12 +4,16 @@ import {
 	IsValidID,
 	GetNumberOfSlash,
 	ErrorNumberOfForwardSlashIsNotEqual,
-	DocumentReference,
 	CollectionReference,
 	Query,
-	FirestoreAndFirestoreTesting,
+	Firestore,
 } from './types'
-import { docCreator, collectionCreator, collectionGroupCreator } from './refs'
+import {
+	docCreator,
+	collectionCreator,
+	collectionGroupCreator,
+	Doc,
+} from './refs'
 
 /**
  Gets a FirelordReference instance that refers to the doc, collection, and collectionGroup at the specified absolute path.
@@ -24,7 +28,7 @@ import { docCreator, collectionCreator, collectionGroupCreator } from './refs'
  DocumentReference, CollectionReference and CollectionGroupReference instance.
  */
 export const getFirelord =
-	<T extends MetaType>(firestore?: FirestoreAndFirestoreTesting) =>
+	<T extends MetaType>(firestore?: Firestore) =>
 	<CollectionPath extends T['collectionPath'] = T['collectionPath']>(
 		collectionPath: CollectionPath extends never
 			? CollectionPath
@@ -52,27 +56,23 @@ export const getFirelord =
 	}
 
 export type FirelordRef<T extends MetaType> = Readonly<{
-	doc: {
-		<DocumentId extends T['docID']>(
-			documentID: DocumentId extends never
-				? DocumentId
-				: DocumentId extends IsValidID<DocumentId, 'Document', 'ID'>
-				? T['docID']
-				: IsValidID<DocumentId, 'Document', 'ID'>
-		): DocumentReference<T>
-		<DocumentId extends T['docID']>(
-			firestore: FirestoreAndFirestoreTesting,
-			documentID: DocumentId extends never
-				? DocumentId
-				: DocumentId extends IsValidID<DocumentId, 'Document', 'ID'>
-				? T['docID']
-				: IsValidID<DocumentId, 'Document', 'ID'>
-		): DocumentReference<T>
-	}
-	collection: (
-		firestore?: FirestoreAndFirestoreTesting
-	) => CollectionReference<T>
-	collectionGroup: (firestore?: FirestoreAndFirestoreTesting) => Query<T>
+	doc: Doc<T>
+	/**
+		 Gets a CollectionReference instance that refers to the collection at the specified absolute path.
+	
+	@param firestore — A reference to the root Firestore instance.
+	
+	@returns — The CollectionReference instance.
+		 */
+	collection: (firestore?: Firestore) => CollectionReference<T>
+	/**
+		Creates and returns a new Query instance that includes all documents in the database that are contained in a collection or subcollection with the given collectionId.
+	
+	@param firestore — A reference to the root Firestore instance.
+	
+	@returns — The created Query.
+		 */
+	collectionGroup: (firestore?: Firestore) => Query<T>
 }>
 
 export * from './batch'
