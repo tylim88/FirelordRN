@@ -1,5 +1,5 @@
 import { MetaType } from './metaTypeCreator'
-import { Firestore } from './ori'
+import { Firestore } from './alias'
 import { QuerySymbol } from './unique'
 
 export interface DocumentReference<T extends MetaType> {
