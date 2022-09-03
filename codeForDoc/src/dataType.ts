@@ -1,4 +1,4 @@
-import { MetaTypeCreator, ServerTimestamp } from 'firelordjs'
+import { MetaTypeCreator, ServerTimestamp } from 'firelordrn'
 
 export type Example = MetaTypeCreator<
 	{

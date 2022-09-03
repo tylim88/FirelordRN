@@ -1,4 +1,4 @@
-import { MetaTypeCreator, getFirelord, query, where } from 'firelordjs'
+import { MetaTypeCreator, getFirelord, query, where } from 'firelordrn'
 
 const firelord = getFirelord()
 

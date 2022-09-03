@@ -4,7 +4,7 @@ import {
 	MetaTypeCreator,
 	getFirelord,
 	orderBy,
-} from 'firelordjs'
+} from 'firelordrn'
 type a = MetaTypeCreator<
 	{
 		a: number

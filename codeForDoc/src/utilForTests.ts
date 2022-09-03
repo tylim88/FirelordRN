@@ -13,7 +13,7 @@ import {
 	ServerTimestamp,
 	DeleteField,
 	DocumentSnapshot,
-} from 'firelordjs'
+} from 'firelordrn'
 import { initializeApp as initializeApp_ } from 'firebase/app'
 import pick from 'pick-random'
 import betwin from 'betwin'

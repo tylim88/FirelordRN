@@ -20,7 +20,7 @@ import {
 	runTransaction,
 	getFirestore,
 	writeBatch,
-} from 'firelordjs'
+} from 'firelordrn'
 
 initializeApp()
 const userRef = getFirelord<User>()('topLevel/FirelordTest/Users')

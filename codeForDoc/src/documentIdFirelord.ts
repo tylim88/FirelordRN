@@ -1,4 +1,4 @@
-import { MetaTypeCreator, getFirelord } from 'firelordjs'
+import { MetaTypeCreator, getFirelord } from 'firelordrn'
 
 type Parent = MetaTypeCreator<
 	{

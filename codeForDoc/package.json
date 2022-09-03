@@ -1,7 +1,7 @@
 {
 	"name": "code-for-doc",
 	"version": "1.0.0",
-	"description": "test published Firelordjs",
+	"description": "test published firelordrn",
 	"main": "index.js",
 	"scripts": {
 		"uninstall": "rm -rf node_modules && rm -rf package-lock.json",
@@ -13,7 +13,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"firebase": "latest",
-		"firelordjs": "latest"
+		"firelordrn": "latest"
 	},
 	"devDependencies": {
 		"@firebase/rules-unit-testing": "^2.0.2",

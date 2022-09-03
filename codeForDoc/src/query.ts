@@ -7,7 +7,7 @@ import {
 	startAfter,
 	endBefore,
 	endAt,
-} from 'firelordjs'
+} from 'firelordrn'
 
 type abc = MetaTypeCreator<
 	{

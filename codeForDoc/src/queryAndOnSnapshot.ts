@@ -7,7 +7,7 @@ import {
 	onSnapshot,
 	startAfter,
 	limit,
-} from 'firelordjs'
+} from 'firelordrn'
 
 export const dummy = async () => {
 	await getDocs(

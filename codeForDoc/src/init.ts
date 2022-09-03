@@ -1,7 +1,6 @@
-import { getFirelord } from 'firelordjs'
+import { getFirelord, getFirestore } from 'firelordrn'
 import { initializeApp } from 'firebase/app'
 import { Example } from './dataType'
-import { getFirestore } from '@react-native-firebase/firestore'
 
 initializeApp({
 	apiKey: '### FIREBASE API KEY ###',

@@ -8,7 +8,7 @@ import {
 	serverTimestamp,
 	increment,
 	arrayUnion,
-} from 'firelordjs'
+} from 'firelordrn'
 
 export const dummy = async () => {
 	await setDoc(example.doc('abc'), {

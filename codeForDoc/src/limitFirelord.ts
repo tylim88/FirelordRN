@@ -1,4 +1,4 @@
-import { limit } from 'firelordjs'
+import { limit } from 'firelordrn'
 
 //
 //

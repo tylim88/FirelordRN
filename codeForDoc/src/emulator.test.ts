@@ -21,7 +21,7 @@ import {
 	orderBy,
 	endAt,
 	startAt,
-} from 'firelordjs'
+} from 'firelordrn'
 import firebasejson from '../firebase.json'
 import {
 	User,

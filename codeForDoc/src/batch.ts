@@ -1,5 +1,5 @@
 import { example, db } from './init'
-import { writeBatch, serverTimestamp } from 'firelordjs'
+import { writeBatch, serverTimestamp } from 'firelordrn'
 
 const batch = writeBatch(db)
 // OR

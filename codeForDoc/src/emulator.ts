@@ -14,7 +14,7 @@ import {
 	writeBatch,
 	FirelordRef,
 	MetaTypeCreator,
-} from 'firelordjs'
+} from 'firelordrn'
 import firebasejson from '../firebase.json'
 
 const port = firebasejson.emulators.firestore.port

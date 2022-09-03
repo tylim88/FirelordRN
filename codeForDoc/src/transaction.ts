@@ -4,7 +4,7 @@ import {
 	serverTimestamp,
 	increment,
 	arrayRemove,
-} from 'firelordjs'
+} from 'firelordrn'
 
 export const dummy = async () => {
 	try {

@@ -6,7 +6,7 @@ import {
 	deleteField,
 	getDoc,
 	setDoc,
-} from 'firelordjs'
+} from 'firelordrn'
 
 type abc = MetaTypeCreator<
 	{
@@ -137,5 +137,5 @@ setDoc(
 // =======update==========
 updateDoc(docRef4, {
 	'b.c': deleteField(), // good, 'b.c' is top level
-	b: { c: deleteField() }, // good, FirelordJS flatten it internally.
+	b: { c: deleteField() }, // good, firelordrn flatten it internally.
 })

@@ -1,4 +1,4 @@
-import { updateDoc, MetaTypeCreator, getFirelord } from 'firelordjs'
+import { updateDoc, MetaTypeCreator, getFirelord } from 'firelordrn'
 
 type abc = MetaTypeCreator<
 	{

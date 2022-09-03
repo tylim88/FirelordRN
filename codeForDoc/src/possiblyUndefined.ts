@@ -4,7 +4,7 @@ import {
 	MetaTypeCreator,
 	getFirelord,
 	PossiblyReadAsUndefined,
-} from 'firelordjs'
+} from 'firelordrn'
 
 type abc = MetaTypeCreator<
 	{

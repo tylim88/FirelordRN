@@ -1,4 +1,4 @@
-import { setDoc, MetaTypeCreator, getFirelord } from 'firelordjs'
+import { setDoc, MetaTypeCreator, getFirelord } from 'firelordrn'
 type a = MetaTypeCreator<
 	{
 		a: [][]

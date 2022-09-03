@@ -3,7 +3,7 @@ import {
 	MetaTypeCreator,
 	getFirelord,
 	ServerTimestamp,
-} from 'firelordjs'
+} from 'firelordrn'
 
 type abc = MetaTypeCreator<
 	{

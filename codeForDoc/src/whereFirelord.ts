@@ -5,7 +5,7 @@ import {
 	where,
 	orderBy,
 	documentId,
-} from 'firelordjs'
+} from 'firelordrn'
 
 type Parent = MetaTypeCreator<
 	{

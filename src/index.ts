@@ -84,7 +84,7 @@ export * from './operations'
 export * from './queryClauses'
 export { query } from './refs'
 export * from './equal'
-
+export { getFirestore }
 export type {
 	MetaType,
 	MetaTypeCreator,
@@ -93,7 +93,7 @@ export type {
 	PossiblyReadAsUndefined,
 	DocumentReference,
 	CollectionReference,
-	Query as Query,
+	Query,
 	DocumentSnapshot,
 	QuerySnapshot,
 	QueryDocumentSnapshot,

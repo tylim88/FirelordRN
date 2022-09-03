@@ -1,4 +1,4 @@
-import { endAt } from 'firelordjs'
+import { endAt } from 'firelordrn'
 
 const arrNever: never[] = []
 const arrNumber: number[] = []
