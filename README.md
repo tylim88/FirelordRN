@@ -143,3 +143,4 @@ It is not possible to unified platform specific API, good thing is most of these
 2. [Firelord](https://github.com/tylim88/firelord) - Typescript wrapper for Firestore admin
 3. [FireLaw](https://github.com/tylim88/firelaw) - Write Firestore security rule with Typescript, utilizing Firelord type engine.
 4. [FireCall](https://github.com/tylim88/FireCall) - Helper Function to write easier and safer Firebase onCall function.
+5. [FireSageJS](https://github.com/tylim88/FireSageJS) - Typescript wrapper for Realtime Database
