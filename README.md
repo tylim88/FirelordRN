@@ -119,7 +119,9 @@ This change is necessary as v1 corrected a lot of issues in v0.
 
 The v0 documentation can still be found [here](https://github.com/tylim88/Firelordrn/tree/896c572d7ab3063156d8e3b515bb523c3720f4e2).
 
-Status of this project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) resolve.
+## Status
+
+This project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) is resolved.
 
 ## Why Do You Need This? What Problems Firelord Solves?
 
@@ -143,3 +145,4 @@ It is not possible to unified platform specific API, good thing is most of these
 2. [Firelord](https://github.com/tylim88/firelord) - Typescript wrapper for Firestore admin
 3. [FireLaw](https://github.com/tylim88/firelaw) - Write Firestore security rule with Typescript, utilizing Firelord type engine.
 4. [FireCall](https://github.com/tylim88/FireCall) - Helper Function to write easier and safer Firebase onCall function.
+5. [FireSageJS](https://github.com/tylim88/FireSageJS) - Typescript wrapper for Realtime Database
