@@ -119,7 +119,9 @@ This change is necessary as v1 corrected a lot of issues in v0.
 
 The v0 documentation can still be found [here](https://github.com/tylim88/Firelordrn/tree/896c572d7ab3063156d8e3b515bb523c3720f4e2).
 
-Status of this project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) resolve.
+## Status
+
+This project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) is resolved.
 
 ## Why Do You Need This? What Problems Firelord Solves?
 
