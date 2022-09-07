@@ -1,5 +1,5 @@
 import { getFirelord, getFirestore } from 'firelordrn'
-import { Example } from './dataType'
+import { Example } from './define_meta_type'
 
 export const db = getFirestore() // you can skip this line
 
