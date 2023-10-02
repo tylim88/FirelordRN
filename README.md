@@ -119,11 +119,15 @@ This change is necessary as v1 corrected a lot of issues in v0.
 
 The v0 documentation can still be found [here](https://github.com/tylim88/Firelordrn/tree/896c572d7ab3063156d8e3b515bb523c3720f4e2).
 
-[Expo support Firebase JS SDK](https://docs.expo.dev/guides/using-firebase/), which mean you can use the Firelord [Web version](https://github.com/tylim88/FirelordJS).
+
 
 ## Status
 
-This project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) is resolved.
+~~This project is on hold until this [issue](https://github.com/tylim88/Firelordrn/issues/1) is resolved.~~
+
+Due to timw constraint, I am no longer working on this.
+
+But it is not the end of the world because [Expo support Firebase JS SDK](https://docs.expo.dev/guides/using-firebase/), which mean you can use the Firelord [Web version](https://github.com/tylim88/FirelordJS).
 
 ## Why Do You Need This? What Problems Firelord Solves?
 
