@@ -1,6 +1,6 @@
 {
 	"name": "firelordrn",
-	"version": "1.6.14",
+	"version": "1.6.15",
 	"description": "🔥 Extremely High Precision Typescript Wrapper for Firestore React Native, Providing Unparalleled Type Safe and Dev Experience",
 	"source": "src/index.ts",
 	"main": "dist/index.js",
