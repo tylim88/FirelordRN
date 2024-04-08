@@ -1,0 +1,30 @@
+{
+	"ts-node": {
+		"compilerOptions": {
+			"module": "commonjs"
+		}
+	},
+	"compilerOptions": {
+		"isolatedModules": true,
+		"module": "es2020",
+		"declaration": true,
+		"esModuleInterop": true,
+		"sourceMap": false,
+		"noImplicitAny": true,
+		"strict": true,
+		"target": "es5",
+		"allowJs": true,
+		"emitDeclarationOnly": false,
+		"outDir": "dist",
+		"noUncheckedIndexedAccess": true,
+		"removeComments": false,
+		"resolveJsonModule": true,
+		"noEmit": true,
+		"exactOptionalPropertyTypes": true,
+		"moduleResolution": "node",
+		"types": ["vitest/globals"],
+		"skipLibCheck": true,
+		"noErrorTruncation": true
+	},
+	"include": ["src"]
+}
