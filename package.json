@@ -22,7 +22,7 @@
 		"commit": "git commit --no-verify",
 		"kill": "kill-port 8080",
 		"knip": "knip",
-		"publish": "npm run build && npm publish",
+		"pub": "npm run build && npm publish",
 		"dev": "---------------------dev------------------------",
 		"d-link": "npm run build && npm run b-un && npm run link",
 		"d-test": "tsc",
