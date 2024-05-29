@@ -1,6 +1,6 @@
 {
 	"name": "firelordrn",
-	"version": "2.9.0",
+	"version": "2.9.1",
 	"description": "🔥 High Precision Typescript Wrapper for Firestore React Native, Providing Unparalleled Type Safe and Dev Experience",
 	"author": "tylim",
 	"license": "MIT",

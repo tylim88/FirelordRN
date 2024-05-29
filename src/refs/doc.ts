@@ -1,4 +1,4 @@
-import { DocCreator } from '../types'
+import { DocCreator, OriCollectionReference } from '../types'
 import { buildPathFromColIDsAndDocIDs } from './utils'
 import fs from '@react-native-firebase/firestore'
 
@@ -18,9 +18,11 @@ export const docCreator: DocCreator =
 				})
 			)
 		} else {
-			return fs().doc(
+			return (
 				// @ts-expect-error
-				collectionReferenceOrDocumentId
+				(collectionReferenceOrDocumentId as OriCollectionReference)
+					//
+					.doc()
 			)
 		}
 	}
