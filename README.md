@@ -100,6 +100,8 @@
 
 Update, I am restarting this project, you can try it now, no proper doc yet but the API is similar to web version
 
+This project is battle tested
+
 ## Why Do You Need This? What Problems Firelord Solves?
 
 Read here at [FirelordJS](https://github.com/tylim88/FirelordJS#readme).
